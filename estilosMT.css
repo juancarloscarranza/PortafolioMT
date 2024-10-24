@@ -1,0 +1,24 @@
+body {
+    background: #c4c980;
+    margin: 50px auto 50px auto;
+    width: 700px;
+}
+h1, h2, h3, h4, h5, h6{
+    color: rgb(91, 78, 167);
+    font-family: Helvetica;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+h1{
+    border: 1px solid rgb(18, 2, 32);
+}
+p {
+    color: rgb(31, 80, 25);
+    font-family: Arial;
+}
+a:link{
+    color: black;
+}
+a:visited{
+color:rgb(106, 91, 161);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Dinámica</title>
+    <link rel="stylesheet" href="practica5.css">
+    <link rel="stylesheet" href="estilosMT.css">
+    <script src="practica5.js"></script>
+</head>
+<body>
+    <a href="Principal_Proyecto_PpI.html">Regreso al Índice</a> <br>
+    <h1>Asilo San Carlos</h1>
+    <h3>Registro</h3>
+    <from action="">
+        Nombre del nuevo residente: <input type="text" id="nombre" required> <br>
+        Mail de la persona que respone: <input type="email" id="mai" required> <br>
+        <h2>Servicios:</h2>
+        <input type="checkbox" id="psi" name="servicio" value="Terapia psicológica"> Terapia psicológica <br>
+        <input type="checkbox" id="est" name="servicio" value="Estética"> Servicio de estética <br>
+        <input type="checkbox" id="mas" name="servicio" value="Masaje"> Masajes <br>
+      <input type="radio" name="gen" id="masc" value="Masculino"> Masculino <br>
+      <input type="radio" name="gen" id="feme" value="Femenino"> Femenino <br>
+      <input type="radio" name="gen" id="nb" value="No binario"> No binario <br>
+      <h2>Fecha y hora de nacimiento del huésped:</h2>
+      <input type="datetime-local" id="fecha">
+      <h2>Color menos favorito</h2>
+      <input type="color" id="colorcito">
+      <h2>Qué tanto deseas que tu familiar esté contento</h2>
+      <input type="range" id="contento">
+    </form>
+    <button type="button" onclick="registrar()">Registrar</button>
+    <table id="asilooo"></table>
+    <a href="about.html">About</a>
+        <a href="Practica2.html">Práctica 2</a>
+        <a href="indicetablas.html">Práctica 3</a>
+        <a href="Practica4JuanCarlos.html">Práctica 4</a>
+</body>
+</html>

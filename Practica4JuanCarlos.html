@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilosMT.css">
+</head>
+<body>
+    <a href="Principal_Proyecto_PpI.html">Regreso al Índice</a> <br>
+    <h1>Funciones</h1>
+    <p>Introduce un numero y calcularemos su equivalencia de cali y facotrial:</p>
+    <form>
+        <input type="number" id="numero" min="0" max="10">
+    </form>
+    <button type="button" onClick="evaluarCalificacion(); factorial();">Evaluar</button>
+    <p id="calificacion"></p>
+    <p id="factorial"></p>
+    <p>Introduce los siguientes datos:</p>
+    <form>
+    <input type="text" id="nombre">Nombre</input><br>
+    <input type="email" id="em">E-mail</input><br>
+    <input type="number" id="edad">Edad</input><br>
+    <p>Género</p>
+    <input type="radio" id="genero" name="genero" value="hombre">Hombre</input><br>
+    <input type="radio" id="genero" name="genero" value="mujer">Mujer</input><br>
+    <input type="radio" id="genero" name="genero" value="nb">No binario</input><br>
+    <input type="radio" id="genero" name="genero" value="pnd">Perfiero no decirlo</input><br>
+    <input type="dat" id="nacimiento">Fecha de necimiento</input><br>
+    <input type="color" id="colorcito">Color favorito</input><br>
+    </form>
+    <button type="button" onClick="datos()">Presentar datos</button>
+    <p id="recopilacion"></p>
+    <script>
+        function evaluarCalificacion() {
+            let calificacion = parseFloat(document.getElementById('numero').value);
+            let cali='';
+                if(calificacion <0 || calificacion>10){
+                    cali = 'calificación no válida';
+                } else if (calificacion < 6) {
+                    cali = 'Equivale a NA';
+                } else if (calificacion < 7.5) {
+                    cali = 'Equivale a S';
+                } else if (calificacion < 9) {
+                    cali = 'Equivale a B';
+                } else if (calificacion < 10) {
+                    cali = 'Equivale a MB';
+                } else if(calificacion==10){
+                    cali = 'Equivale a LAN';
+                }
+            document.getElementById('calificacion').innerHTML = cali;
+        }
+        function factorial() {
+            let ite = parseInt(document.getElementById('numero').value);
+            let fact=1;
+            if(ite<0){
+                fact='No definido';
+            }
+            for(let i=1; i<ite+1; i++){
+                fact *= i;
+            }
+            document.getElementById('factorial').innerHTML = fact;
+        }
+        function datos(){
+            let nombre = document.getElementById('nombre').value;
+            let emaill = document.getElementById('em').value;
+            let edad = document.getElementById('edad').value;
+            let generoo = document.getElementById('genero').value;
+            let fechaa = document.getElementById('nacimiento').value;
+            let colorr = document.getElementById('colorcito').value;
+            let recopilacion = nombre+' '+emaill+' '+edad+' '+generoo+' '+fechaa+' '+colorr;
+            document.getElementById('recopilacion').innerHTML = recopilacion;
+        }
+    </script>
+    <a href="about.html">About</a>
+    <a href="Practica2.html">Práctica 2</a>
+    <a href="indicetablas.html">Práctica 3</a>
+    <a href="practica5.html">Práctica 5</a>
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="estilosMT.css">
+        <style>
+            table, tr, td, th{
+                border-collapse: collapse;
+            }
+            table, tr#h{
+                border:0.5px solid black;
+            }
+            tr.azul td{
+                background-color: aquamarine;
+            }
+            tr.blanco td{
+                background-color: white;
+            }
+            .bordesito{
+                border-right:0.5px solid rgb(207, 192, 192);
+            }
+            th{
+                background-color: blanchedalmond;
+            }
+            td.tachado{
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="Principal_Proyecto_PpI.html">Regreso al Índice</a> <br>
+        <h1>Tareas de la uni</h1>
+        <h2>Lista de tareas hechas y por hacer</h2>
+        <form>
+         Tarea a agregar: <input type="text" id="tarea" required>
+        </form>
+        <button type="button" onclick="registrar()">Registrar</button>
+        <button type="button" onclick="limpiar()">Limpiar</button>
+        <table id="tareitas"></table>
+        <a href="about.html">About</a>
+        <a href="Practica2.html">Práctica 2</a>
+        <a href="indicetablas.html">Práctica 3</a>
+        <a href="Practica4JuanCarlos.html">Práctica 4</a>
+        <a href="practica5.html">Práctica 5</a>
+        <script>
+            var lista=[];
+            var hecha=[];
+            crear();
+            function registrar() {
+            if (document.getElementById("tarea").value == '') 
+                alert("Pon el nombre de la tarea");
+              x = document.getElementById("tarea").value;
+              lista.push(x);
+              hecha.push(false);
+              crear();
+            }
+            function limpiar(){
+                lista=[];
+                hecha=[];
+                crear();
+            }
+            function hechas(estado){
+                if(hecha[estado]==true) hecha[estado]=false;
+                else hecha[estado]=true;
+                crear();
+            }
+            function crear(){
+                var registro = "<tr id=\"h\"><th>Nombre de la tarea</th><th>Estado</th></tr>";
+                var estilo=0;
+                for(var i=0; i<lista.length;i++){
+                    if (estilo%2 == 0) {
+                        registro = registro + "<tr class=\"blanco\">";
+                    } else {
+                        registro = registro + "<tr class=\"azul\">";
+                    }
+                    if(hecha[i]==true) 
+                        registro= registro + "<td class=\"tachado bordesito\">" + lista[i] + "</td> <td> <input type=\"checkbox\" onclick=\"hechas("+i+")\" checked=\"true\"> </td>";
+                    else 
+                        registro= registro + "<td  class=\"bordesito\">" + lista[i] + "</td> <td> <input type=\"checkbox\" onclick=\"hechas("+i+")\"> </td>";
+                    registro= registro + "</tr>";
+                    estilo = estilo + 1;
+                }
+                document.getElementById("tareitas").innerHTML = registro;
+                document.getElementById("tarea").value = "";
+            }
+        </script>
+    </body>
+</html>
